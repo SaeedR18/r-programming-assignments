@@ -1,4 +1,5 @@
 # r-programming-assignments
-#Saeed Rahman
-#LIS4370 
-Repository for R Programming Assignments
+
+**Name:** Saeed Rahman  
+**Course:** LIS4370  
+**Description:** Repository for R Programming Assignments
