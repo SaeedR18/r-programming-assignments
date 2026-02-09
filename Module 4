@@ -1,0 +1,65 @@
+# Module 4 Programming Structure Assignment
+# Hospital dataset (10 patients)
+
+# 1) Create vectors from the rows given 
+Freq <- c(0.6, 0.3, 0.4, 0.4, 0.2, 0.6, 0.3, 0.4, 0.9, 0.2)
+bloodp <- c(103, 87, 32, 42, 59, 109, 78, 205, 135, 176)
+
+# Doctor assessments as text 
+# first: bad/good with one NA
+first_txt <- c("bad", "bad", "bad", "bad", "good", "good", "good", "good", NA, "bad")
+
+# second: low/high
+second_txt <- c("low", "low", "high", "high", "low", "low", "high", "high", "high", "high")
+
+# finaldecision: low/high
+final_txt <- c("low", "high", "low", "high", "low", "high", "low", "high", "high", "high")
+
+
+# 2) Convert to numeric coding
+# first: bad = 1, good = 0
+first <- ifelse(first_txt == "bad", 1,
+                ifelse(first_txt == "good", 0, NA))
+
+# second: low = 0, high = 1
+second <- ifelse(second_txt == "high", 1,
+                 ifelse(second_txt == "low", 0, NA))
+
+# finaldecision: low = 0, high = 1
+finaldecision <- ifelse(final_txt == "high", 1,
+                        ifelse(final_txt == "low", 0, NA))
+
+
+# 3) Putting everything into a data frame 
+hospital.df <- data.frame(
+  Freq = Freq,
+  bloodp = bloodp,
+  first = first,
+  second = second,
+  finaldecision = finaldecision
+)
+
+# Quick check
+hospital.df
+
+
+
+# PART A: Visualizations
+
+# A1) Side-by-side boxplot of blood pressure by FINAL decision (0 = low, 1 = high)
+boxplot(
+  bloodp ~ finaldecision,
+  data = hospital.df,
+  main = "Blood Pressure by Final Decision",
+  xlab = "Final Decision (0 = low, 1 = high)",
+  ylab = "Blood Pressure"
+)
+
+# A2) Histogram of blood pressure
+hist(
+  hospital.df$bloodp,
+  main = "Histogram of Blood Pressure",
+  xlab = "Blood Pressure",
+  ylab = "Frequency"
+)
+
