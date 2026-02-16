@@ -1,0 +1,67 @@
+# Assignment #5 – Matrix Algebra
+
+
+# 1. Create matrices
+A <- matrix(1:100, nrow = 10)
+B <- matrix(1:1000, nrow = 10)
+
+# View dimensions
+dim(A)   
+dim(B)   
+
+
+# 2. Determinant of A
+
+
+det_A <- det(A)
+det_A
+
+
+# 3. Attempt inverse of A
+
+
+# This will fail because det(A) = 0 (singular matrix)
+try(solve(A))
+
+
+# 4. Attempt inverse of B
+
+
+# This will fail because B is not square
+try(solve(B))
+
+
+# 5. Transpose matrices
+
+
+A_t <- t(A)
+B_t <- t(B)
+
+dim(A_t)  
+dim(B_t)   
+
+
+# 6. Matrix–Vector Multiplication
+
+
+v <- 1:10
+A_multiplied <- A %*% v
+
+A_multiplied
+dim(A_multiplied)   
+
+
+# 7. Matrix–Matrix Multiplication
+
+
+C <- A %*% B
+
+dim(C)   
+C[1:5, 1:5]   # Show part of result
+
+
+# 8. Extra Checks
+
+
+# Verify multiplication works dimensionally
+ncol(A) == nrow(B)   # Should be TRUE
