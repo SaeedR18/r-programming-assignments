@@ -1,0 +1,41 @@
+# Module 6 – Doing Math in R Part 2
+
+
+# Question 1
+# Given matrices A and B
+
+A <- matrix(c(2,0,1,3), ncol = 2)
+B <- matrix(c(5,2,4,-1), ncol = 2)
+
+A
+B
+
+# a) Find A + B
+A_plus_B <- A + B
+A_plus_B
+
+# b) Find A - B
+A_minus_B <- A - B
+A_minus_B
+
+
+# Question 2
+# Build diagonal matrix using diag()
+# Diagonal values: 4, 1, 2, 3
+
+D <- diag(c(4,1,2,3))
+D
+
+# Question 3
+# Generate the required 5x5 matrix
+
+# Step 1: Create a 5x5 identity matrix multiplied by 3
+M <- diag(3, 5)
+
+# Step 2: Modify first row to be 3 1 1 1 1
+M[1, ] <- c(3,1,1,1,1)
+
+# Step 3: Modify first column (rows 2 to 5) to be 2
+M[2:5, 1] <- 2
+
+M
