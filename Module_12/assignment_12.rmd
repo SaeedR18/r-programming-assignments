@@ -1,0 +1,58 @@
+---
+title: "My R Markdown Primer"
+author: "Saeed Rahman"
+date: "April 13, 2026"
+output: html_document
+---
+  
+#Introduction
+  
+R Markdown is a tool in RStudio that allows me to combine narrative text, R code, and mathematical expressions in a single document. It helps present analysis in a clean and organized format while keeping the code and results together.
+
+This document uses the built-in **iris** dataset to demonstrate simple analysis, code chunks, and plotting in R Markdown.
+
+# Narrative Paragraph
+
+One useful feature of R Markdown is that it allows me to explain my work in plain language while also showing the exact code used to generate results. This makes the document easier to read and helps support reproducible analysis.
+
+# LaTeX Math Expressions
+
+Here is an example of inline math: $\alpha + \beta = \gamma$
+  
+  Here is an example of a displayed equation:
+  
+$$
+\bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}
+$$
+  
+  # Load Dataset
+  
+```{r}
+data(iris)
+head(iris)
+```
+# Summary Statistics
+```{r}
+summary(iris)
+```
+# Simple Analysis
+```{r}
+
+mean(iris$Sepal.Length)
+mean(iris$Petal.Length)
+```
+
+# Plot
+```{r}
+plot(iris$Sepal.Length, iris$Petal.Length,
+     main = "Sepal Length vs Petal Length",
+     xlab = "Sepal Length",
+     ylab = "Petal Length",
+     pch = 19)
+```
+# Reflection
+
+Using R Markdown was helpful because it allowed me to combine code, text, and results in one document. It is more efficient than writing a plain report because everything updates automatically when the code is run. One challenge I faced was formatting code chunks correctly and ensuring the document knitted without errors.
+
+
+
